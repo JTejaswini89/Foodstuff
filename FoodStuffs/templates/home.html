@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodstuffs - Empowering Your Village Groceries</title>
+</head>
+<style>body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4ff; /* Light lilac */
+    color: #333;
+    line-height: 1.7;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #e0d8f0, #f8f4ff); /* Light purple gradient */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero-figure {
+    text-align: center;
+    max-width: 300px;
+    font-weight: bold;
+}
+
+.hero-figure figcaption {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #444;
+    font-weight: 500;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.top-nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+}
+
+.top-nav .logo img {
+    height: 40px; /* Adjust the height of the logo image as needed */
+}
+
+.top-nav .logo .logo-text {
+    color: #9400d3; /* Dark violet logo text color */
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none; /* Remove default link underline */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #7b68ee; /* Medium purple */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em; /* Increased size */
+    position: relative; /* For positioning the underline */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #9400d3; /* Dark violet hover */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust position of the line */
+    left: 0;
+    width: 0%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #9400d3; /* Color of the underline */
+    transition: width 0.3s ease-out; /* Smooth transition for width */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Underline expands to full width on hover */
+}
+
+.hero-image-container {
+    display: flex; /* Arrange images side by side */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    gap: 20px; /* Space between images */
+    margin-top: 30px; /* Adjust top margin as needed */
+}
+
+.hero-image {
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.hero-image:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.hero-title {
+    color: #9400d3; /* Dark violet */
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    color: #8a2be2; /* Blue violet */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-actions .button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-actions .button.primary {
+    background-color: #8a2be2; /* Blue violet */
+    color: white;
+}
+
+.hero-actions .button.secondary {
+    background-color: transparent;
+    color: #7b68ee; /* Medium purple */
+    border: 2px solid #7b68ee;
+}
+
+.hero-actions .button.primary:hover {
+    background-color: #9400d3; /* Dark violet hover */
+}
+
+.hero-actions .button.secondary:hover {
+    background-color: #e0d8f0; /* Light purple hover */
+    color: #9400d3;
+}
+
+.main-content {
+    padding: 40px 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: #9400d3; /* Dark violet */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #777;
+    font-size: 1.1em;
+}
+
+.features-section {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: #8a2be2; /* Blue violet */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #555;
+}
+
+.testimonials-section {
+    background-color: #e0d8f0; /* Light purple */
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-item p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-item cite {
+    color: #777;
+    font-weight: bold;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.cta-section h2 {
+    color: #9400d3; /* Dark violet */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    color: #555;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-section .button.primary.large {
+    font-size: 1.3em;
+    padding: 15px 35px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4b0082; /* Indigo */
+    color: white;
+    font-size: 0.9em;
+}</style>
+<body>
+    <header class="hero-section">
+        <nav class="top-nav">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://i.pinimg.com/736x/e0/54/50/e0545086f1e430fe9bdba3494ada8209.jpg" alt="Foodstuffs Logo">
+                </a>
+                <span class="logo-text">Foodstuffs</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/custom_admin/">Admin</a></li>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/register/">Register</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 class="hero-title">Your Village, Your Groceries, Powered by Foodstuffs</h1>
+            <p class="hero-subtitle">Connecting local shops of R.K.V.B Peta for a seamless grocery experience.</p>
+            <div class="hero-actions">
+                <a href="/" class="button primary">Explore Local Shops</a>
+                <a href="/learn-more/" class="button secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+           <div class="hero-image-container">
+    <figure class="hero-figure">
+        <img src="https://i.pinimg.com/736x/ae/ac/5e/aeac5ea11fca313abca7fcf13cb127f1.jpg" alt="Fresh Vegetables" class="hero-image">
+        <figcaption>Fresh Vegetables</figcaption>
+    </figure>
+    <figure class="hero-figure">
+        <img src="https://i.pinimg.com/736x/7e/c2/1b/7ec21bdf94bdda555ec46690b7919a39.jpg" alt="Variety of Chips" class="hero-image">
+        <figcaption>Variety of Chips</figcaption>
+    </figure>
+    <figure class="hero-figure">
+        <img src="https://i.pinimg.com/736x/1d/ed/c1/1dedc193ee378acd4b39b05e0e9227dc.jpg" alt="Bag of Groceries" class="hero-image">
+        <figcaption>Bag of Groceries</figcaption>
+    </figure>
+</div>
+
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="features-section">
+            <div class="section-header">
+                <h2>Why Choose Foodstuffs?</h2>
+                <p>Experience the benefits of a connected local grocery network.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-store"></i>
+                    <h3>Wide Selection</h3>
+                    <p>Access a variety of products from all your local stores.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Convenient Delivery</h3>
+                    <p>Get your groceries delivered right to your doorstep.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Support Local</h3>
+                    <p>Empower your community by shopping locally.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tag"></i>
+                    <h3>Exclusive Deals</h3>
+                    <p>Discover special offers from your neighborhood shops.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>What Our Community Says</h2>
+                <p>Hear from residents who are already enjoying Foodstuffs.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p>"Foodstuffs has made grocery shopping so much easier! I can get everything I need without leaving home."</p>
+                    <cite>- A Happy Resident</cite>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Supporting local businesses through Foodstuffs is important to me. Plus, the delivery is always on time!"</p>
+                    <cite>- Another Satisfied User</cite>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Transform Your Grocery Shopping?</h2>
+            <p>Join Foodstuffs today and experience the future of local groceries in R.K.V.B Peta.</p>
+            <a href="/register/" class="button primary large">RegisterNow</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Team IT Explores Foodstuffs - Connecting R.K.V.B Peta</p>
+    </footer>
+</body>
+</html>
