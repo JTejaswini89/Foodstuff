@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CAFE | Daily Dost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f9faff;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .overall {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            background: linear-gradient(135deg, #a98dde, #d1b7e0);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px darkslateblue;
+            color: white;
+        }
+
+        .overall h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+
+        .colors h2 {
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .overall b p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px darkslategrey;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 960px;
+            margin: 0 auto 40px auto;
+        }
+
+        .dailyroutine {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            width: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dailyroutine:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(169, 141, 222, 0.4);
+        }
+
+        .dailyroutine img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .desc {
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #6b4c99;
+            background-color: #f5efff;
+            text-align: center;
+            min-height: 70px;
+        }
+
+        /* Links styling */
+        a.lsr {
+            background-color: #a98dde;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            margin: 0 12px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(169, 141, 222, 0.3);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        a.lsr:hover {
+            background-color: #7c5fbf;
+            box-shadow: 0 6px 15px darkmagenta;
+            color: #fff;
+        }
+
+        /* Anchor inside coffepic */
+        .dailyroutine a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                justify-content: center;
+            }
+            .dailyroutine {
+                width: 90%;
+            }
+            .overall {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overall">
+        <h1>Daily Dost</h1>
+        <div class="colors">
+            <h2>Your needs in a small step</h2>
+        </div>
+        <b>
+            <p>Food stuff is more than just tasks—it’s your morning ritual,
+                your smooth start, your little moment of calm. With every tap, 
+                discover ease, speed, and all your essentials ready to roll. 
+                Take a small step into a day made simple. Whether it’s brushing,
+                breakfast, or your go-to snack, we’ve got it all. 
+                Let’s make every day effortless together.</p>
+        </b>
+    </div>
+    <div class="row">
+        <div class="dailyroutine">
+            <a target="_blank" href="/personalhy" title="Personal Hygiene">
+                <img src="https://dailymedicos.com/wp-content/uploads/2020/03/15844-scaled.jpg" alt="Personal Hygiene" />
+                <div class="desc">"Clean body, clear mind — hygiene is self-respect in action."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/food" title="Food">
+                <img src="https://www.getpark.co.uk/CATIMAGES/2018/lrg/2816-1.jpg" alt="Food" />
+                <div class="desc">"Good food is the fuel for a strong body and a sharp mind."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/drinks" title="Drinks">
+                <img src="https://i.pinimg.com/736x/16/74/5e/16745e518d75f5897cae3a54b8914dcb.jpg" alt="Drinks" />
+                <div class="desc">"Stay hydrated — your body runs better when it's watered."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/health&wellness" title="Health & Wellness">
+                <img src="https://i.pinimg.com/736x/9c/a5/2e/9ca52e4918b7a83c334576a96102f789.jpg" alt="Health & Wellness" />
+                <div class="desc">"Health isn’t just wealth — it’s the foundation of everything."</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

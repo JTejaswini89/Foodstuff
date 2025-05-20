@@ -24,7 +24,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect('main')
+            return redirect('categories')
         else:
             messages.error(request, 'Invalid credentials')
     return render(request, 'Login.html')
@@ -33,8 +33,8 @@ def logout_user(request):
     logout(request)
     return redirect('login_user')
 
-def main_page(request):
-    return render(request, 'main.html')
+def categories_page(request):
+    return render(request, 'categories.html')
 
 
 def learnmore(request):

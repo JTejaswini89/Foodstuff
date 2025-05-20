@@ -23,7 +23,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('login/', views.login_user, name='login_user'),       # match renamed view
     path('register/', views.register, name='register_user'),  # match renamed view
-    path('main/', views.main_page, name='main'),
+    path('categories/', views.categories_page, name='categories'),
     path('learn-more/', views.learnmore, name='learnmore'),
     path('logout/', views.logout_user, name='logout_user'),
 
