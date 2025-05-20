@@ -1,282 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodstuffs - Shopping</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CAFE | Daily Dost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet" />
     <style>
-        /* static/css/shop.css */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 20px;
-    background-color: #f8f4ff;
-    color: #333;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+        body {
+            background-color: #f9faff;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-.shop-category {
-    text-align: center;
-    color: #9400d3;
-    margin-bottom: 30px;
-}
+        /* Logout Button Styling */
+        .logout-button {
+            background-color:purple;
+            color: white;
+            padding: 10px 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            float: right;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px gray,0 0 10px gray,0 0 10px gray,0 0 10px gray;
+        }
 
-.item-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        .logout-button:hover {
+            background-color:#a98dde;
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+        }
 
-.item-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    position: relative;
-}
+        .overall {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            background: linear-gradient(135deg, #a98dde, #d1b7e0);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px darkslateblue;
+            color: white;
+        }
 
-.item-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
+        .overall h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
 
-.item-name {
-    color: #333;
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
+        .colors h2 {
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
 
-.item-price {
-    color: #555;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
+        .overall b p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px darkslategrey;
+        }
 
-.add-to-cart-btn {
-    background-color: #8a2be2;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform */
-}
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 960px;
+            margin: 0 auto 40px auto;
+        }
 
-.add-to-cart-btn:hover {
-    background-color: #9400d3;
-}
+        .dailyroutine {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            width: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.item-quantity {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        .dailyroutine:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(169, 141, 222, 0.4);
+        }
 
-.quantity-btn {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
+        .dailyroutine img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
 
-.quantity-btn:hover {
-    background-color: #e0e0e0;
-}
+        .desc {
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #6b4c99;
+            background-color: #f5efff;
+            text-align: center;
+            min-height: 70px;
+        }
 
-.quantity-value {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #555;
-    min-width: 20px;
-    text-align: center;
-}
+        a.lsr {
+            background-color: #a98dde;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            margin: 0 12px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(169, 141, 222, 0.3);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
 
-.view-cart-container {
-    text-align: center;
-    margin-top: 30px;
-}
+        a.lsr:hover {
+            background-color: #7c5fbf;
+            box-shadow: 0 6px 15px darkmagenta;
+            color: #fff;
+        }
 
-.view-cart-button {
-    background-color: #4b0082;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
+        .dailyroutine a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
 
-.view-cart-button:hover {
-    background-color: #6a1b9a;
-}
-    </style>
-    <script>
-        // static/js/shop.js
-document.addEventListener('DOMContentLoaded', function() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    const itemCards = document.querySelectorAll('.item-card');
-    const viewCartButton = document.querySelector('.view-cart-button');
-
-    addToCartButtons.forEach((button, index) => {
-        const itemCard = button.parentNode;
-        const quantityDiv = itemCard.querySelector('.item-quantity');
-        const quantityValueSpan = quantityDiv.querySelector('.quantity-value');
-        const plusButton = quantityDiv.querySelector('.plus');
-        const minusButton = quantityDiv.querySelector('.minus');
-        let quantity = 0;
-
-        button.addEventListener('click', function() {
-             // Store original position
-            this.originalTransform = window.getComputedStyle(this).transform;
-            button.style.transform = 'translateX(-100px)'; // Move button to the left
-            button.style.opacity = '0'; // Fade out
-            setTimeout(() => {
-                button.style.display = 'none';
-                quantityDiv.style.display = 'flex';
-                quantity = 1;
-                quantityValueSpan.textContent = quantity;
-            }, 300); // Match transition duration
-        });
-
-        plusButton.addEventListener('click', function() {
-            quantity++;
-            quantityValueSpan.textContent = quantity;
-        });
-
-        minusButton.addEventListener('click', function() {
-            if (quantity > 0) {
-                quantity--;
-                quantityValueSpan.textContent = quantity;
-                if (quantity === 0) {
-                    quantityDiv.style.display = 'none';
-                    button.style.display = 'block';
-                     // Restore original position
-                    button.style.transform = 'translateX(0)';
-                    button.style.opacity = '1'; // Fade in
-                }
+        @media (max-width: 768px) {
+            .row {
+                justify-content: center;
             }
-        });
-    });
 
-     // Animation on add to cart
-    itemCards.forEach(card => {
-        const addButton = card.querySelector('.add-to-cart-btn');
-        addButton.addEventListener('click', () => {
-            addButton.classList.add('animate');
-            setTimeout(() => {
-                addButton.classList.remove('animate');
-            }, 300); //  animation duration
-        });
-    });
+            .dailyroutine {
+                width: 90%;
+            }
 
-    // View Cart Button Click
-    viewCartButton.addEventListener('click', function() {
-        window.location.href = "{% url 'cart' %}"; // Redirect to cart.html (replace 'cart' with your actual URL name)
-    });
-});
-    </script>
+            .overall {
+                padding: 30px 20px;
+            }
+
+            .logout-button {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="shop-category">Fresh Produce</h1>
-        <div class="item-grid">
-            <div class="item-card" data-item-id="apple">
-                <img src="{% static 'images/apple.jpg' %}" alt="Apple" class="item-image">
-                <h2 class="item-name">Fresh Apples</h2>
-                <p class="item-price">₹50/kg</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
+    <!-- Logout Button -->
+    <form method="post" action="{% url 'logout_user' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
 
-            <div class="item-card" data-item-id="banana">
-                <img src="{% static 'images/banana.jpg' %}" alt="Banana" class="item-image">
-                <h2 class="item-name">Ripe Bananas</h2>
-                <p class="item-price">₹30/dozen</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
-
-            <div class="item-card" data-item-id="milk">
-                <img src="{% static 'images/milk.jpg' %}" alt="Milk" class="item-image">
-                <h2 class="item-name">Pure Milk (1L)</h2>
-                <p class="item-price">₹60/L</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
-
-            <div class="item-card" data-item-id="bread">
-                <img src="{% static 'images/bread.jpg' %}" alt="Bread" class="item-image">
-                <h2 class="item-name">Whole Wheat Bread</h2>
-                <p class="item-price">₹45/loaf</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
-
-            <div class="item-card" data-item-id="eggs">
-                <img src="{% static 'images/eggs.jpg' %}" alt="Eggs" class="item-image">
-                <h2 class="item-name">Farm Fresh Eggs (12)</h2>
-                <p class="item-price">₹70/tray</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
-
-            <div class="item-card" data-item-id="rice">
-                <img src="{% static 'images/rice.jpg' %}" alt="Rice" class="item-image">
-                <h2 class="item-name">Basmati Rice (1kg)</h2>
-                <p class="item-price">₹80/kg</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <div class="item-quantity" style="display: none;">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-value">0</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-            </div>
+    <div class="overall">
+        <h1>Daily Dost</h1>
+        <div class="colors">
+            <h2>Your needs in a small step</h2>
         </div>
-        <div class="view-cart-container">
-            <button class="view-cart-button">View Cart</button>
+        <b>
+            <p>Daily stuff is more than just tasks—it’s your morning ritual,
+                your smooth start, your little moment of calm. With every tap, 
+                discover ease, speed, and all your essentials ready to roll. 
+                Take a small step into a day made simple. Whether it’s brushing,
+                breakfast, or your go-to snack, we’ve got it all. 
+                Let’s make every day effortless together.</p>
+        </b>
+    </div>
+
+    <div class="row">
+        <div class="dailyroutine">
+            <a target="_blank" href="/personalhy" title="Personal Hygiene">
+                <img src="https://i.pinimg.com/736x/04/f3/e2/04f3e26cf3242f59f373d95431ba81a1.jpg" alt="Personal Hygiene" />
+                <div class="desc">"Clean body, clear mind — hygiene is self-respect in action."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/food" title="Food">
+                <img src="https://www.getpark.co.uk/CATIMAGES/2018/lrg/2816-1.jpg" alt="Food" />
+                <div class="desc">"Good food is the fuel for a strong body and a sharp mind."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/drinks" title="Drinks">
+                <img src="https://i.pinimg.com/736x/83/d3/de/83d3deb297f5b4b39bb73d3fe3b04da3.jpg" alt="Drinks" />
+                <div class="desc">"Stay hydrated — your body runs better when it's watered."</div>
+            </a>
+        </div>
+
+        <div class="dailyroutine">
+            <a target="_blank" href="/health&wellness" title="Health & Wellness">
+                <img src="https://i.pinimg.com/736x/9c/a5/2e/9ca52e4918b7a83c334576a96102f789.jpg" alt="Health & Wellness" />
+                <div class="desc">"Health isn’t just wealth — it’s the foundation of everything."</div>
+            </a>
         </div>
     </div>
 </body>

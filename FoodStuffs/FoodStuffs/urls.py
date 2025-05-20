@@ -14,21 +14,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
-from User import views
+from users import views
 from custom_admin import views as vi
 
 urlpatterns = [
+    # Admin URLs
+    path('custom_admin/', vi.custom_admin, name='custom_admin'),
+    path('admin/dashboard/', vi.admin_dashboard, name='admin_dashboard'),
+    path('admin/users/', vi.view_registered_users, name='view_registered_users'),
+    path('admin/activate_user/', vi.admin_activate_users, name='admin_activate_users'),
+    path('view_registered_users/',vi.view_registered_users,name='view_registered_users'),
+    # User URLs
     path('', views.home, name='home'),
-    path('login/', views.login_user, name='login_user'),       # match renamed view
-    path('register/', views.register, name='register_user'),  # match renamed view
-    path('categories/', views.categories_page, name='categories'),
-    path('learn-more/', views.learnmore, name='learnmore'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login_user, name='login_user'),
     path('logout/', views.logout_user, name='logout_user'),
-
-path('custom_admin/', vi.custom_admin_home, name='custom_admin_home'),
-path('admin_dashboard/', vi.admin_dashboard, name='admin_dashboard'),  # ✅ added name
+    path('main/', views.main_page, name='main'),
+    path('learnmore/', views.learnmore, name='learnmore'),
+    path('personalhy/', views.personalhy, name='personalhy'),
+    path('food/', views.food, name='food'),
+    path('drinks/', views.drinks, name='drinks'),
+    path('health/', views.health, name='health'),
 ]
-
 

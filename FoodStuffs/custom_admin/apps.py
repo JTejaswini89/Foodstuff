@@ -1,6 +1,5 @@
 from django.apps import AppConfig
 
-
-class AdminConfig(AppConfig):
+class CustomAdminConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'custom_admin'
+    name = 'custom_admin'  # Make sure this matches your folder name
